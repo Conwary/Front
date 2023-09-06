@@ -28,7 +28,10 @@ export default function Home() {
         <Link className="nav-link" href="/about">about</Link>
         </li>
         <li className="nav-item">
-        <Link className="nav-link" href="/dashboard/index">dashboard</Link>
+        <Link className="nav-link" href="/dashboard">dashboard</Link>
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link" href="/AddMember">addmember</Link>
         </li>
       </ul>
     </div>

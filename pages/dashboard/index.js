@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import Link from 'next/link';
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3001/api/users');
+  const res = await fetch('http://localhost:3000/api/users');
   const data = await res.json();
   const posts = data.users || [];
 

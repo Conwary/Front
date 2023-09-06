@@ -1,7 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch('http://localhost:3000/api/users');
   const data = await res.json();
   const posts = data.users || []; // กำหนด posts เป็นอาเรย์ว่างหาก data.users เป็น undefined

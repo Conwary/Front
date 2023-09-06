@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 import { Modal, Button } from 'react-bootstrap';
 import Link from 'next/link';
 export async function getServerSideProps() {
@@ -45,11 +46,11 @@ export default function Component({ posts }) {
 
   return (
     <>
-      {/* {session ? ( */}
+      {session ? (
         <>
-          {/* Signed in as {session.user.email} <br />
+          Signed in as {session.user.email} <br />
           {session.user.fname} {session.user.lname} <br />
-          <button onClick={() => signOut()}>Sign out</button> */}
+          <button onClick={() => signOut()}>Sign out</button>
 
           <TableContainer component={Paper}>
             <Table>
@@ -76,7 +77,7 @@ export default function Component({ posts }) {
                     <TableCell>{post.password}</TableCell>
                     <TableCell>{post.status}</TableCell>
                     <TableCell>
-                      <button className="btn btn-outline-warning" onClick={() => handleCheck(post.id)}>Edit</button>
+                    <Link href={`/dashboard/frmEdit?id=${post.id}`} className="btn btn-warning"><i className="bi bi-pencil-square"></i>
                       <button className="btn btn-outline-danger" onClick={() => { setDeleteItemId(post.id); handleShowModal(); }}>Delete</button>
                     </TableCell>
                   </TableRow>
@@ -106,10 +107,10 @@ export default function Component({ posts }) {
         </>
       ) : (
         <>
-          {/* Not signed in <br />
-          <button onClick={() => signIn()}>Sign in</button> */}
+          Not signed in <br />
+          <button onClick={() => signIn()}>Sign in</button>
         </>
-      {/* )} */}
+      )}
     </>
   );
 }

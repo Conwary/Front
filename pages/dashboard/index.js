@@ -47,9 +47,9 @@ export default function Component({ posts }) {
     <>
       {session ? (
         <>
-          Signed in as {session.user.email} <br />
+          {/* Signed in as {session.user.email} <br />
           {session.user.fname} {session.user.lname} <br />
-          <button onClick={() => signOut()}>Sign out</button>
+          <button onClick={() => signOut()}>Sign out</button> */}
 
           <TableContainer component={Paper}>
             <Table>
@@ -106,8 +106,8 @@ export default function Component({ posts }) {
         </>
       ) : (
         <>
-          Not signed in <br />
-          <button onClick={() => signIn()}>Sign in</button>
+          {/* Not signed in <br />
+          <button onClick={() => signIn()}>Sign in</button> */}
         </>
       )}
     </>

@@ -53,9 +53,9 @@ const handleSubmit = (event) => {
   if (session) {
     return (
       <>
-        Signed in as {session.user.email} <br />
+        {/* Signed in as {session.user.email} <br />
         {session.user.fname} {session.user.lname} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        <button onClick={() => signOut()}>Sign out</button> */}
         <form onSubmit={handleSubmit}>
         <div>
           <input type="text" name="txt_studentid" id="txt_studentid" className="form-control"style={{ margin: '0.5rem', fontSize: '1.2rem' }} placeholder="Student ID" />
@@ -72,8 +72,8 @@ const handleSubmit = (event) => {
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      {/* Not signed in <br />
+      <button onClick={() => signIn()}>Sign in</button> */}
     </>
   );
 }

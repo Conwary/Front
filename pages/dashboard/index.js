@@ -45,7 +45,7 @@ export default function Component({ posts }) {
 
   return (
     <>
-      {session ? (
+      {/* {session ? ( */}
         <>
           {/* Signed in as {session.user.email} <br />
           {session.user.fname} {session.user.lname} <br />
@@ -109,7 +109,7 @@ export default function Component({ posts }) {
           {/* Not signed in <br />
           <button onClick={() => signIn()}>Sign in</button> */}
         </>
-      )}
+      {/* )} */}
     </>
   );
 }

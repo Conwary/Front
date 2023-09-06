@@ -50,7 +50,7 @@ const handleSubmit = (event) => {
       });
 
   }; //end handleSubmit
-  if (session) {
+  // if (session) {
     return (
       <>
         {/* Signed in as {session.user.email} <br />
@@ -76,4 +76,4 @@ const handleSubmit = (event) => {
       <button onClick={() => signIn()}>Sign in</button> */}
     </>
   );
-}
+// }

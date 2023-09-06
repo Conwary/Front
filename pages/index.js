@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from "next/router";
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home() {
   return (
       <>
@@ -10,33 +11,6 @@ export default function Home() {
 </Head>
 
 <main className="text-center data-bs-toggle mb-4">
-<nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <Link className="navbar-brand" href="/">Conway MassShop</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon" />
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" href="/">Home</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" href="/features">Features</Link>
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link" href="/about">about</Link>
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link" href="/dashboard">dashboard</Link>
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link" href="/AddMember">addmember</Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
   <div id="carouselExample " className="carousel slide data-bs-toggle">
     <div className="carousel-inner data-bs-toggle">
       <div className="carousel-item active">

@@ -89,9 +89,6 @@ const handleSubmit = (event) => {
           </nav>
         </header>
         <br /><br /><br />
-        Signed in as {session.user.email} <br />
-        {session.user.fname} {session.user.lname} <br />
-        <button onClick={() => signOut()}>Sign out</button>
         <form onSubmit={handleSubmit}>
         <div>
           <input type="text" name="txt_studentid" id="txt_studentid" className="form-control"style={{ margin: '0.5rem', fontSize: '1.2rem' }} placeholder="Student ID" />

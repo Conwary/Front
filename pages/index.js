@@ -1,7 +1,9 @@
-import React from'react'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from "next/router";
+export default function Home() {
+  return (
       <>
 <Head>
       <title>MassShop</title>
@@ -10,7 +12,7 @@ import { useRouter } from "next/router";
 <main className="text-center data-bs-toggle mb-4">
 <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid">
-    <Link className="navbar-brand" href="/index">Conway MassShop</Link>
+    <Link className="navbar-brand" href="/">Conway MassShop</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
     </button>
@@ -91,7 +93,8 @@ import { useRouter } from "next/router";
   </div>
   <div className="b-example-divider" />
       </>
-  
+  );
+}
   
 
 

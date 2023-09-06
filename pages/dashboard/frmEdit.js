@@ -64,7 +64,7 @@ export default function Component({ posts }) {
     return (
       <>
         <header>
-          <nav className="navbar fixed-top navbar-expand-lg bg-warning">
+          <nav className="navbar fixed-top navbar-expand-lg bg-success">
             <div className="container-fluid">
               <button
                 className="navbar-toggler"
@@ -82,25 +82,22 @@ export default function Component({ posts }) {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                Signed In as {session.user.fname} {session.user.lname}
+                Signed in as {session.user.fname} {session.user.lname} <br />
                 <span>&nbsp;</span>
                 <form className="d-flex" role="search">
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-info"
                     type="submit"
                     onClick={() => signOut()}
                   >
-                    ออกจากระบบ
+                    Sign Out
                   </button>
                 </form>
               </div>
             </div>
           </nav>
         </header>
-        <br />
-        <br />
-        <br />
-        <br />
+        <br /><br /><br />
         <main>
           <div className="container-fluid">
             <p></p>

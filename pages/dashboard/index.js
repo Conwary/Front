@@ -81,7 +81,7 @@ export default function Component({ posts }) {
             </div>
           </nav>
         </header>
-        <br /><br /><br /><br />
+        <br /><br /><br />
           <TableContainer component={Paper}>
             <Table>
               <TableHead>

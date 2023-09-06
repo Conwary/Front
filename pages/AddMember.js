@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps() {
   const res = await fetch('https://bed7-2405-9800-b910-701c-7422-d1b-74bf-8d55.ngrok-free.app/api/users');
   const data = await res.json();
@@ -54,7 +55,7 @@ const handleSubmit = (event) => {
     return (
       <>
          <header>
-          <nav className="navbar fixed-top navbar-expand-lg bg-warning">
+          <nav className="navbar fixed-top navbar-expand-lg bg-success">
             <div className="container-fluid">
               <button
                 className="navbar-toggler"
@@ -72,22 +73,22 @@ const handleSubmit = (event) => {
                 id="navbarSupportedContent"
               >
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                Signed In as {session.user.firstname} {session.user.lastname}
+                Signed in as {session.user.fname} {session.user.lname} <br />
                 <span>&nbsp;</span>
                 <form className="d-flex" role="search">
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-info"
                     type="submit"
                     onClick={() => signOut()}
                   >
-                    ออกจากระบบ
+                    Sign Out
                   </button>
                 </form>
               </div>
             </div>
           </nav>
         </header>
-        <br /><br /><br /><br />
+        <br /><br /><br />
         Signed in as {session.user.email} <br />
         {session.user.fname} {session.user.lname} <br />
         <button onClick={() => signOut()}>Sign out</button>

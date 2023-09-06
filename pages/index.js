@@ -1,41 +1,9 @@
 import React from'react'
 import Head from 'next/head'
 import Link from 'next/link';
-import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
-export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/api/users')
-  const posts = await res.json()
-
-  return {
-    props: {
-      posts,
-    },
-  }
-}
-export default function Component({ posts }) {
-  const { data: session } = useSession()
-  if (session) {
-    if (session) {
-      return (
-        <>
-           Signed in as {session.user.email} <br />
-          {session.user.fname}  {session.user.lname} <br />
-          <button onClick={() => signOut()}>Sign out</button>
-  
-          <ul>
-          {posts.users.map((post) => (
-            <li key={post.id}>{post.firstname}</li>
-          ))}
-        </ul>
-        </>
-      )
-    }
-    return (
       <>
-        Not signed in <br />
-        <button onClick={() => signIn()}>Sign in</button>
-    <Head>
+<Head>
       <title>MassShop</title>
 </Head>
 
@@ -122,11 +90,9 @@ export default function Component({ posts }) {
     </footer>
   </div>
   <div className="b-example-divider" />
-
       </>
-    )
-  }
   
-}
+  
+
 
 

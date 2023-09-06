@@ -47,10 +47,41 @@ export default function Component({ posts }) {
     <>
       {session ? (
         <>
-          Signed in as {session.user.email} <br />
-          {session.user.fname} {session.user.lname} <br />
-          <button onClick={() => signOut()}>Sign out</button>
-
+        <header>
+          <nav className="navbar fixed-top navbar-expand-lg bg-warning">
+            <div className="container-fluid">
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                Signed in as {session.user.fname} {session.user.lname} <br />
+                <span>&nbsp;</span>
+                <form className="d-flex" role="search">
+                  <button
+                    className="btn btn-danger"
+                    type="submit"
+                    onClick={() => signOut()}
+                  >
+                    ออกจากระบบ
+                  </button>
+                </form>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <br /><br /><br /><br />
           <TableContainer component={Paper}>
             <Table>
               <TableHead>
@@ -76,7 +107,7 @@ export default function Component({ posts }) {
                     <TableCell>{post.password}</TableCell>
                     <TableCell>{post.status}</TableCell>
                     <TableCell>
-                    <Link href={`/dashboard/frmEdit?id=${post.id}`} className="btn btn-warning"><i className="bi bi-pencil-square"></i></Link>{" "}
+                    <Link href={`/dashboard/frmEdit?id=${post.id}`} className="btn btn-outline-warning"></Link>{"Edit"}
                       <button className="btn btn-outline-danger" onClick={() => { setDeleteItemId(post.id); handleShowModal(); }}>Delete</button>
                     </TableCell>
                   </TableRow>

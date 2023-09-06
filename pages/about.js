@@ -31,6 +31,7 @@ export default function index() {
         </li>
         <li className="nav-item">
         <Link className="nav-link" href="/about">about</Link>
+        </li>
         <li className="nav-item">
         <Link className="nav-link" href="/dashboard">dashboard</Link>
         </li>

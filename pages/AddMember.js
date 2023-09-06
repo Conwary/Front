@@ -2,7 +2,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/users');
+  const res = await fetch('https://bed7-2405-9800-b910-701c-7422-d1b-74bf-8d55.ngrok-free.app/api/users');
   const data = await res.json();
   const posts = data.users || []; // กำหนด posts เป็นอาเรย์ว่างหาก data.users เป็น undefined
 
@@ -29,7 +29,7 @@ const handleSubmit = (event) => {
       status: data.get('txt_status')
     }
 
-      fetch(`http://localhost:3000/api/users`, {
+      fetch(`https://bed7-2405-9800-b910-701c-7422-d1b-74bf-8d55.ngrok-free.app/api/users`, {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

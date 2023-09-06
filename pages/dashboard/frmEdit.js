@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export async function getStaticProps(req) {
+export async function getServerSideProps(req) {
   const id = req.query;
-  const res = await fetch('http://localhost:3000/api/users?id=' + id, {
+  const res = await fetch('https://bed7-2405-9800-b910-701c-7422-d1b-74bf-8d55.ngrok-free.app/api/users?id=' + id, {
     method: 'GET',
   })
   const posts = await res.json();

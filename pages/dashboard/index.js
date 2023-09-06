@@ -101,7 +101,7 @@ export default function Component({ posts }) {
           </Modal>
 
           <Link href="/AddMember">
-            <button className="btn btn-outline-info">Add Member</button>
+            <button className="btn btn-outline-info">AddMember</button>
           </Link>
         </>
       ) : (

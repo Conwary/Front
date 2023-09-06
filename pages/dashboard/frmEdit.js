@@ -1,6 +1,8 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(req) {

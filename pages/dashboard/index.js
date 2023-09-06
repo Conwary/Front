@@ -48,7 +48,7 @@ export default function Component({ posts }) {
       {session ? (
         <>
         <header>
-          <nav className="navbar fixed-top navbar-expand-lg bg-warning">
+          <nav className="navbar fixed-top navbar-expand-lg bg-success">
             <div className="container-fluid">
               <button
                 className="navbar-toggler"
@@ -70,11 +70,11 @@ export default function Component({ posts }) {
                 <span>&nbsp;</span>
                 <form className="d-flex" role="search">
                   <button
-                    className="btn btn-danger"
+                    className="btn btn-info"
                     type="submit"
                     onClick={() => signOut()}
                   >
-                    ออกจากระบบ
+                    Sign Out
                   </button>
                 </form>
               </div>
@@ -107,7 +107,7 @@ export default function Component({ posts }) {
                     <TableCell>{post.password}</TableCell>
                     <TableCell>{post.status}</TableCell>
                     <TableCell>
-                    <Link href={`/dashboard/frmEdit?id=${post.id}`} className="btn btn-outline-warning"></Link>{"Edit"}
+                    <Link href={`/dashboard/frmEdit?id=${post.id}`}><a className="btn btn-outline-warning">Edit</a></Link>
                       <button className="btn btn-outline-danger" onClick={() => { setDeleteItemId(post.id); handleShowModal(); }}>Delete</button>
                     </TableCell>
                   </TableRow>

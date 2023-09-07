@@ -6,7 +6,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(req) {
-  const id = req.query;
+  const id = req.query.id;
   const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
     method: 'GET',
   })
@@ -122,6 +122,7 @@ export default function Component({ posts }) {
                           // onChange={(event) => { setId(event.target.value) }}
                           defaultValue={post.id}
                           required
+                          readOnly // ทำให้ไม่สามารถแก้ไขได้
                         />
                       </div>
                       <div className="input-group mb-3">

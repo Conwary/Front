@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 export async function getServerSideProps() {
-  const res = await fetch('https://front-dvkuwpbic-rickconway.vercel.app/api/users');
+  const res = await fetch('http://localhost:3000/api/users');
   const data = await res.json();
   const posts = data.users || []; // กำหนด posts เป็นอาเรย์ว่างหาก data.users เป็น undefined
 
@@ -30,7 +30,7 @@ const handleSubmit = (event) => {
       status: data.get('txt_status')
     }
 
-      fetch(`https://frontend-rickconway.vercel.app/api/users`, {
+      fetch(`http://localhost:3000/api/users`, {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

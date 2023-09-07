@@ -5,19 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from "next/router";
 
-export async function getServerSideProps({ query }) {
-    const id = query.id;
-    const res = await fetch('https://frontend-rickconway.vercel.app/api/users?id=' + id, {
-      method: 'GET',
-    })
-    const posts = await res.json();
-  
-    return {
-      props: {
-        posts,
-      },
-    };
-  }
+export async function getServerSideProps(req) {
+  const id = req.query;
+  const res = await fetch('http://localhost:3000/api/users?id=' + id, {
+    method: 'GET',
+  })
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default function Component({ posts }) {
   const { data: session } = useSession();
@@ -37,7 +37,7 @@ export default function Component({ posts }) {
       status: data.get('txt_status')
     }
 
-      fetch(`https://frontend-rickconway.vercel.app/api/users`, {
+      fetch(`http://localhost:3000/api/users`, {
         method: 'PUT', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

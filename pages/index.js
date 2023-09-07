@@ -35,7 +35,7 @@ function Home() {
         <Link className="nav-link" href="/dashboard">dashboard</Link>
         </li>
         <li className="nav-item">
-        <Link className="nav-link" href="/AddMember">addmember</Link>
+        <Link className="nav-link" href="/dashboard/user/add">addmember</Link>
         </li>
       </ul>
     </div>

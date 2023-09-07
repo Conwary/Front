@@ -5,19 +5,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from "next/router";
 
-export async function getServerSideProps(req) {
-  const id = req.query.id;
-  const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
-    method: 'GET',
-  })
-  const posts = await res.json();
-
-  return {
-    props: {
-      posts,
-    },
-  };
-}
+export async function getServerSideProps({ query }) {
+    const id = query.id;
+    const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
+      method: 'GET',
+    })
+    const posts = await res.json();
+  
+    return {
+      props: {
+        posts,
+      },
+    };
+  }
 
 export default function Component({ posts }) {
   const { data: session } = useSession();

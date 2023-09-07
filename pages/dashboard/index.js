@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import Link from 'next/link';
 export async function getServerSideProps() {
-  const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users');
+  const res = await fetch('http://localhost:3000/api/users');
   const data = await res.json();
   const posts = data.users || [];
 
@@ -27,7 +27,7 @@ export default function Component({ posts }) {
   const handleShowModal = () => setShowModal(true);
   const handleDelete = async (id) => {
     try {
-      await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
+      await fetch('http://localhost:3000/api/users?id=' + id, {
         method: 'DELETE',
       });
       console.log('User deleted successfully');
@@ -107,7 +107,7 @@ export default function Component({ posts }) {
                     <TableCell>{post.password}</TableCell>
                     <TableCell>{post.status}</TableCell>
                     <TableCell>
-                    <Link href={`/dashboard/frmEdit?id=${post.id}`} className="btn btn-warning"><i className="bi bi-pencil-square"></i></Link>{" "}
+                    <Link href={`/dashboard/frmEdit?id=${post.id}`}><a className="btn btn-outline-warning">Edit</a></Link>
                       <button className="btn btn-outline-danger" onClick={() => { setDeleteItemId(post.id); handleShowModal(); }}>Delete</button>
                     </TableCell>
                   </TableRow>

@@ -6,29 +6,18 @@ import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(req) {
-    const id = req.query.id;
-    // ตรวจสอบว่า id ไม่ใช่ไอดีที่คุณต้องการ
-    if (id !== 'your_desired_id') {
-      // ให้เรียกใช้ router.push() เพื่อนำผู้ใช้ไปยังหน้าเพจที่คุณต้องการ
-      return {
-        redirect: {
-          destination: '/your_desired_page',
-          permanent: false, // ตั้งค่าเป็น true หากต้องการให้เป็นการ redirect ถาวร
-        },
-      };
-    }
-  
-    const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
-      method: 'GET',
-    })
-    const posts = await res.json();
-  
-    return {
-      props: {
-        posts,
-      },
-    };
-  }
+  const id = req.query.id;
+  const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
+    method: 'GET',
+  })
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default function Component({ posts }) {
   const { data: session } = useSession();

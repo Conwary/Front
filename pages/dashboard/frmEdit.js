@@ -121,8 +121,7 @@ export default function Component({ posts }) {
                           placeholder="StudentID"
                           // onChange={(event) => { setId(event.target.value) }}
                           defaultValue={post.id}
-                          required
-                          readOnly // ทำให้ไม่สามารถแก้ไขได้
+                          readOnly 
                         />
                       </div>
                       <div className="input-group mb-3">
@@ -191,12 +190,12 @@ export default function Component({ posts }) {
                         <div className="col-md-12 text-center text-lg-start">
                           <button
                             type="submit"
-                            className="btn btn-success btn-block"
+                            className="btn btn-outline-success btn-block"
                           >
                             <span>Save</span>{" "}
                             <i className="bi bi-arrow-right" />
                           </button>&nbsp;&nbsp;&nbsp;
-                          <Link href="./" className="btn btn-warning">Back</Link>
+                          <Link href="./" className="btn btn-outline-warning">Back</Link>
                         </div>
                       </div>
                       </>

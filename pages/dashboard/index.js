@@ -107,7 +107,7 @@ export default function Component({ posts }) {
                     <TableCell>{post.password}</TableCell>
                     <TableCell>{post.status}</TableCell>
                     <TableCell>
-                    <Link href={`/dashboard/frmEdit?id=${post.id}`}><a className="btn btn-outline-warning">Edit</a></Link>
+                    <Link href={`/dashboard/frmEdit?id=${post.id}`} className="btn btn-warning"><i className="bi bi-pencil-square"></i></Link>{" "}
                       <button className="btn btn-outline-danger" onClick={() => { setDeleteItemId(post.id); handleShowModal(); }}>Delete</button>
                     </TableCell>
                   </TableRow>

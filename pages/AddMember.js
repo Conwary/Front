@@ -30,7 +30,7 @@ const handleSubmit = (event) => {
       status: data.get('txt_status')
     }
 
-      fetch(`https://front-dvkuwpbic-rickconway.vercel.app/api/users`, {
+      fetch(`https://frontend-rickconway.vercel.app/api/users`, {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

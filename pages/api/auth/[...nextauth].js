@@ -22,7 +22,7 @@ export const authOptions = {
             // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
             // You can also use the req object to obtain additional parameters
             // (i.e., the request IP address)
-            const res = await fetch("https://front-dvkuwpbic-rickconway.vercel.app/api/users", {
+            const res = await fetch("https://frontend-rickconway.vercel.app/api/users", {
               method: 'POST',
               body: JSON.stringify(credentials),
               headers: { "Content-Type": "application/json" }

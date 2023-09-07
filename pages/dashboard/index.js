@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import Link from 'next/link';
 export async function getServerSideProps() {
-  const res = await fetch('https://bed7-2405-9800-b910-701c-7422-d1b-74bf-8d55.ngrok-free.app/api/users');
+  const res = await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users');
   const data = await res.json();
   const posts = data.users || [];
 
@@ -27,7 +27,7 @@ export default function Component({ posts }) {
   const handleShowModal = () => setShowModal(true);
   const handleDelete = async (id) => {
     try {
-      await fetch('https://bed7-2405-9800-b910-701c-7422-d1b-74bf-8d55.ngrok-free.app/api/users?id=' + id, {
+      await fetch('https://bc79-2405-9800-b910-701c-40fa-ba43-8127-1e48.ngrok-free.app/api/users?id=' + id, {
         method: 'DELETE',
       });
       console.log('User deleted successfully');

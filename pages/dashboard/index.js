@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import Link from 'next/link';
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/users');
+  const res = await fetch('https://front-dvkuwpbic-rickconway.vercel.app/api/users');
   const data = await res.json();
   const posts = data.users || [];
 
@@ -27,7 +27,7 @@ export default function Component({ posts }) {
   const handleShowModal = () => setShowModal(true);
   const handleDelete = async (id) => {
     try {
-      await fetch('http://localhost:3000/api/users?id=' + id, {
+      await fetch('https://front-dvkuwpbic-rickconway.vercel.app/api/users?id=' + id, {
         method: 'DELETE',
       });
       console.log('User deleted successfully');

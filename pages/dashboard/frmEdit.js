@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 
 export async function getServerSideProps({ query }) {
     const id = query.id;
-    const res = await fetch('http://localhost:3000/api/users?id=' + id, {
+    const res = await fetch('https://front-dvkuwpbic-rickconway.vercel.app/api/users?id=' + id, {
       method: 'GET',
     })
     const posts = await res.json();
@@ -37,7 +37,7 @@ export default function Component({ posts }) {
       status: data.get('txt_status')
     }
 
-      fetch(`http://localhost:3000/api/users`, {
+      fetch(`https://front-dvkuwpbic-rickconway.vercel.app/api/users`, {
         method: 'PUT', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

@@ -115,13 +115,25 @@ export default function Component({ posts }) {
                     <div className="input-group mb-3">
                         <input
                           type="text"
+                          name="txt_id"
+                          id="txt_id"
+                          className="form-control bg-white"
+                          placeholder="ID"
+                          // onChange={(event) => { setId(event.target.value) }}
+                          defaultValue={post.id}
+                          readOnly 
+                        />
+                        </div>
+                      <div className="input-group mb-3">
+                        <input
+                          type="text"
                           name="txt_studentid"
                           id="txt_studentid"
                           className="form-control bg-white"
                           placeholder="StudentID"
-                          // onChange={(event) => { setId(event.target.value) }}
-                          defaultValue={post.id}
-                          readOnly 
+                          // onChange={(event) => { setStudentID(event.target.value) }}
+                          defaultValue={post.studentid}
+                          required
                         />
                       </div>
                       <div className="input-group mb-3">

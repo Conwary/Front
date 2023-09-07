@@ -11,7 +11,7 @@ export async function getServerSideProps(req) {
     
   })
   const posts = await res.json();
-  console.log(posts)
+console.log(posts)
 
 
   return {
@@ -114,7 +114,7 @@ export default function Component({ posts }) {
                     <form onSubmit={handleUpdate}>
                     {posts.user.map((post, i) => (
                     <>
-                    <div className="input-group mb-3">
+                    {/* <div className="input-group mb-3">
                         <input
                           type="text"
                           name="txt_id"
@@ -124,8 +124,9 @@ export default function Component({ posts }) {
                           // onChange={(event) => { setId(event.target.value) }}
                           defaultValue={post.id}
                           readOnly 
+                          required
                         />
-                        </div>
+                        </div> */}
                       <div className="input-group mb-3">
                         <input
                           type="text"
@@ -134,8 +135,8 @@ export default function Component({ posts }) {
                           className="form-control bg-white"
                           placeholder="StudentID"
                           // onChange={(event) => { setStudentID(event.target.value) }}
-                          defaultValue={post.studentid}
-                          required
+                          defaultValue={post.id}
+                          readOnly
                         />
                       </div>
                       <div className="input-group mb-3">

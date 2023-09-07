@@ -1,16 +1,18 @@
 import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
 import Link from "next/link";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(req) {
-  const id = req.query;
-  const res = await fetch('http://localhost:3000/api/users?id=' + id, {
+  const {id}   = req.query;
+  const res = await fetch('https://front-rickconway.vercel.app/api/users/'+ id , {
     method: 'GET',
+    
   })
   const posts = await res.json();
+  console.log(posts)
+
 
   return {
     props: {
@@ -37,7 +39,7 @@ export default function Component({ posts }) {
       status: data.get('txt_status')
     }
 
-      fetch(`http://localhost:3000/api/users`, {
+      fetch(`https://front-rickconway.vercel.app/api/users`, {
         method: 'PUT', // or 'PUT'
         headers: {
           'Content-Type': 'application/json',

@@ -27,7 +27,7 @@ export default function Component({ posts }) {
   const handleShowModal = () => setShowModal(true);
   const handleDelete = async (id) => {
     try {
-      await fetch('http://localhost:3000/api/users?id=' + id, {
+      await fetch('https://front-rickconway.vercel.app/api/users?id=' + id, {
         method: 'DELETE',
       });
       console.log('User deleted successfully');
@@ -107,7 +107,7 @@ export default function Component({ posts }) {
                     <TableCell>{post.password}</TableCell>
                     <TableCell>{post.status}</TableCell>
                     <TableCell>
-                    <Link href={`/dashboard/edit/${post.id}`}><a className="btn btn-outline-warning">Edit</a></Link>
+                    <Link href={`/dashboard/user/edit/${post.id}`} className="btn btn-outline-warning">Edit</Link>
                       <button className="btn btn-outline-danger" onClick={() => { setDeleteItemId(post.id); handleShowModal(); }}>Delete</button>
                     </TableCell>
                   </TableRow>
